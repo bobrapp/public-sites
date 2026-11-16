@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Builder Commons — a VibeRANT marketplace concept for Precisely AI Studio</title>
+<meta name="description" content="Concept prototype: a community marketplace where non-coders build on trusted data, quiet VibeRANT guardrails do the hard parts, and builders become the invitation to the sales pipeline.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@500,600&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%223%22 y=%223%22 width=%2211%22 height=%2211%22 rx=%222%22 fill=%22%2316201b%22/%3E%3Crect x=%2218%22 y=%2218%22 width=%2211%22 height=%2211%22 rx=%222%22 fill=%22%23d99a16%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#view">Skip to content</a>
+<div class="shell">
+  <aside class="side" id="side">
+    <a class="logo" href="#/commons" aria-label="Builder Commons home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="3" y="3" width="11" height="11" rx="2" fill="currentColor"/><rect x="18" y="3" width="11" height="11" rx="5.5" fill="none" stroke="currentColor" stroke-width="2.2"/><rect x="3" y="18" width="11" height="11" rx="5.5" fill="none" stroke="currentColor" stroke-width="2.2"/><rect x="18" y="18" width="11" height="11" rx="2" fill="var(--gold)"/></svg>
+      <span><b>Builder Commons</b><small>concept for Precisely AI Studio</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#/commons" data-r="commons"><span>Commons</span><em id="navCount"></em></a>
+      <a href="#/journey" data-r="journey"><span>The journey</span><em>start here</em></a>
+      <a href="#/build" data-r="build"><span>Build without code</span></a>
+      <a href="#/hack" data-r="hack"><span>Hackathons &amp; mashups</span></a>
+      <a href="#/sponsors" data-r="sponsors"><span>Find a sponsor</span></a>
+      <a href="#/people" data-r="people"><span>Find a person</span></a>
+      <a href="#/kit" data-r="kit"><span>Builder kit</span><em>soul · brain</em></a>
+      <div class="nav__sep" role="separator"></div>
+      <a href="#/invites" data-r="invites" class="nav--seller"><span>Invitations</span><em>seller lens</em></a>
+      <a href="#/why" data-r="why"><span>Why this works</span></a>
+      <a href="#/proof" data-r="proof"><span>Proof video</span><em>2 min</em></a>
+    </nav>
+    <div class="me" id="meCard"></div>
+  </aside>
+
+  <div class="main">
+    <header class="top">
+      <button class="iconbtn menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <label class="search"><span class="sr">Search the commons</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search builds, people, skills…" autocomplete="off">
+      </label>
+      <a class="btn btn--primary topcta" href="#/build" aria-label="Start a build">+<span class="topcta__t"> Start a build</span></a>
+    </header>
+    <main id="view" tabindex="-1"></main>
+    <footer class="foot">
+      Concept prototype by Bob Rapp. Not a Precisely product. Community members, organizations and sponsors are fictional sample data; skill, agent and app names match the public <a href="https://precisely.ai/explore" target="_blank" rel="noopener">AI Studio catalog</a>. Votes, ratings, comments, posts and XP are saved on the demo server under an anonymous visitor ID; posts and comments are visible to other visitors. Please don't post anything private.
+    </footer>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog class="modal" id="modal" aria-labelledby="modalTitle"><div id="modalBody"></div></dialog>
+
+<script>window.__API_BASE__ = "port/8000";</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

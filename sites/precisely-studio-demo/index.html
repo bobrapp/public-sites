@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Precisely AI Studio — Live Field Test</title>
+<meta name="description" content="An end-to-end demo of Precisely AI Studio: eight live runs across apps and agents, with results, evidence screenshots, and a candid review.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="#top" aria-label="Field test home">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>Precisely AI Studio <em>field test</em></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#stack">Stack</a>
+      <a href="#tour">Live tour</a>
+      <a href="#scorecard">Scorecard</a>
+      <a href="#review">Review</a>
+      <a href="#build">Build your own</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">Trial workspace · US1 · Nov 7, 2026</p>
+        <h1>Ten live runs through Precisely AI Studio, from a wildfire-exposed home in Colorado to a tax lookup at Ellensburg City Hall.</h1>
+        <p class="lede">Every number on this page came back from a real run on live Precisely data. Step through the tour to see what each app or agent took in, which platform actions it called, what it returned, and where it stumbled.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#tour">Start the tour</a>
+          <a class="btn btn--ghost" href="#review">Skip to the verdict</a>
+        </div>
+      </div>
+      <dl class="stats" aria-label="Run summary">
+        <div><dt>Catalog assets</dt><dd>32</dd><span>6 apps · 8 agents · 18 skills</span></div>
+        <div><dt>Live runs</dt><dd>10</dd><span>5 apps · 5 agents, in 8 tour stops</span></div>
+        <div><dt>Max actions / prompt</dt><dd>13</dd><span>Underwriting Risk Assessor</span></div>
+        <div><dt>Credits used</dt><dd id="creditTotal">—</dd><span>across 5 product areas</span></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="stack" id="stack">
+    <div class="wrap">
+      <div class="sechead">
+        <p class="eyebrow">How the studio is built</p>
+        <h2>Skills compose into agents. Agents power apps. Everything is reachable over MCP.</h2>
+      </div>
+      <div class="layers" role="tablist" aria-label="Catalog layers">
+        <button class="layer" role="tab" aria-selected="true" data-layer="apps"><span class="layer__n">6</span><span class="layer__t">Apps</span><span class="layer__d">Hosted, guided UIs for one job</span></button>
+        <button class="layer" role="tab" aria-selected="false" data-layer="agents"><span class="layer__n">8</span><span class="layer__t">Agents</span><span class="layer__d">LLM flows that chain skills</span></button>
+        <button class="layer" role="tab" aria-selected="false" data-layer="skills"><span class="layer__n">18</span><span class="layer__t">Skills</span><span class="layer__d">Single capabilities on live data</span></button>
+        <button class="layer" role="tab" aria-selected="false" data-layer="mcp"><span class="layer__n">1</span><span class="layer__t">MCP connector</span><span class="layer__d">Use any of it from your own tools</span></button>
+      </div>
+      <div class="layer__panel" id="layerPanel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="tour" id="tour">
+    <div class="wrap">
+      <div class="sechead sechead--row">
+        <div>
+          <p class="eyebrow">Live tour</p>
+          <h2>Stop <span id="stopNum">1</span> of 8</h2>
+        </div>
+        <div class="tour__ctrl">
+          <button class="btn btn--ghost btn--sm" id="playBtn" aria-pressed="false" aria-label="Start presenter mode">▶ Present</button>
+          <button class="btn btn--ghost btn--sm" id="prevBtn" aria-label="Previous stop">← Prev</button>
+          <button class="btn btn--primary btn--sm" id="nextBtn" aria-label="Next stop">Next →</button>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"><span id="progressBar"></span><i id="playBar"></i></div>
+
+      <div class="tour__grid">
+        <nav class="rail" aria-label="Tour stops"><ol id="rail"></ol></nav>
+        <div class="stage" id="stage"></div>
+      </div>
+      <p class="hint">Keys: ← → to move, P to present hands-free. Each stop has its own link — <button class="linkbtn" id="copyLink">copy link to this stop</button>.</p>
+    </div>
+  </section>
+
+  <section class="scorecard" id="scorecard">
+    <div class="wrap">
+      <div class="sechead sechead--row">
+        <div>
+          <p class="eyebrow">Scorecard</p>
+          <h2>How each stop rated, side by side.</h2>
+          <p class="sub">My ratings from this session, 1–5. Click a column to sort, or a row to jump to that stop in the tour.</p>
+        </div>
+      </div>
+      <div class="tablewrap panel panel--flush"><table class="table score" id="scoreTable"></table></div>
+    </div>
+  </section>
+
+  <section class="review" id="review">
+    <div class="wrap">
+      <div class="sechead">
+        <p class="eyebrow">Review</p>
+        <h2>What's genuinely impressive, and what to watch before you put it in front of a customer.</h2>
+      </div>
+      <div class="review__grid">
+        <article class="panel">
+          <h3>The coolest features</h3>
+          <ol class="ranked" id="coolList"></ol>
+        </article>
+        <article class="panel">
+          <h3>Rough edges found in testing</h3>
+          <ul class="issues" id="issueList"></ul>
+        </article>
+      </div>
+      <article class="panel credits">
+        <div class="credits__head">
+          <h3>Where the trial credits went</h3>
+          <p>The usage page breaks spend down by product area but doesn't show a total allowance or remaining balance.</p>
+        </div>
+        <div id="creditBars" class="bars"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="build" id="build">
+    <div class="wrap">
+      <div class="sechead">
+        <p class="eyebrow">Build your own</p>
+        <h2>Take any agent off the shelf and run it inside Claude Code, Copilot, or Databricks.</h2>
+        <p class="sub">Every catalog asset ships a "Try with LLM" build kit (Markdown and JSON specs, no source code). Your coding agent reads it and rebuilds the app against the Precisely MCP server with your own model provider.</p>
+      </div>
+      <ol class="steps" id="steps"></ol>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p>Runs performed in the <a href="https://precisely.ai/explore" target="_blank" rel="noopener">Precisely AI Studio catalog</a> on a trial workspace. Sample prompts and sample datasets are Precisely's; Ellensburg addresses are public buildings. Assessments reflect one session of testing.</p>
+    <p>Map tiles © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot" hidden>
+  <button class="lightbox__close" id="lbClose" aria-label="Close screenshot">✕</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+{
+  "standard": "HIBT-AIGovOps ledger, v1",
+  "project": "Ridge Robotics × GM Cares — celebration site for the October 22, 2026 visit, Columbia Ridge Elementary, Ephrata, WA",
+  "version": "1.9",
+  "generated_at": "2026-10-25T00:38:28+00:00",
+  "built_from_commit": "5803f69",
+  "hash_algorithm": "SHA-256",
+  "chain_rule": "chain = sha256(prev + canonical_json(entry_without_chain))",
+  "files": [
+    {
+      "path": "app.js",
+      "sha256": "cb002e2ea6d15b1b4c876a1aa0d0096dca2137b0b631f882c295841c4adf450d",
+      "bytes": 15408
+    },
+    {
+      "path": "assets/bioglow-ideas.webp",
+      "sha256": "0aa761e06bac59b41db4df1bcd502f0a2cce15280ad037b10f91e2a195cecc2c",
+      "bytes": 478614
+    },
+    {
+      "path": "assets/cake-design-print.jpg",
+      "sha256": "1c5c807298831613873f9e8ed1269e2310e8712e09608b683605a50448f635b5",
+      "bytes": 485369
+    },
+    {
+      "path": "assets/cake-design.webp",
+      "sha256": "98c8a7d203e5fe56b74fa06b953f36b3062dbf8e25b2bb046f6022a0ed6823d5",
+      "bytes": 183362
+    },
+    {
+      "path": "assets/cake-order-sheet.pdf",
+      "sha256": "1509b088db0e6c77f552082001591eb0d2c678357c5800126eeb0ac4f4c6d17b",
+      "bytes": 61744
+    },
+    {
+      "path": "assets/fonts/Chillax-500.woff2",
+      "sha256": "66011a95eed59e55eed49fc75a3aac277d4c42e5b3040ff55ea559588051daba",
+      "bytes": 21504
+    },
+    {
+      "path": "assets/fonts/Chillax-600.woff2",
+      "sha256": "974d6085abacf1cb806922482efd026256d3d64b708e5c095559c1dd62f18f56",
+      "bytes": 21420
+    },
+    {
+      "path": "assets/fonts/GeneralSans-400.woff2",
+      "sha256": "3ec2be771caf168b077ca05af4df1dace77088e2b3a27da570036e61be58a039",
+      "bytes": 23084
+    },
+    {
+      "path": "assets/fonts/GeneralSans-500.woff2",
+      "sha256": "c30377df1de8444d07161725c751f458beec07c28034df2fd275d1aa587a239f",
+      "bytes": 22904
+    },
+    {
+      "path": "assets/fonts/GeneralSans-600.woff2",
+      "sha256": "94a2a0e1ef59728eb65498ed7fe26e5af7e2858a3a4a278a89ac1f83a0544945",
+      "bytes": 23092
+    },
+    {
+      "path": "assets/hero-robot.webp",
+      "sha256": "77bbc1c940ed33a40a51782923c2d7c596391fe5178ba8fd04740f7dea344955",
+      "bytes": 254086
+    },
+    {
+      "path": "assets/qr-site-print.png",
+      "sha256": "54261bda8357666c7542d8286e612e0fd1c9d27dfd6659c98abd109105610874",
+      "bytes": 2710
+    },
+    {
+      "path": "assets/qr-site.png",
+      "sha256": "081b0174eb30651a70a5d486962debe20f6a6e39548ab48e58bf47acce29cde9",
+      "bytes": 1334
+    },
+    {
+      "path": "assets/qr-site.svg",
+      "sha256": "56e5d9fac2ec07ecd9dd319fa22db5eddcbb1cabc71ea11793957e165cc3fe04",
+      "bytes": 2836
+    },
+    {
+      "path": "base.css",
+      "sha256": "8574dd559c2abab6e15e75e24791a99e5aa01e3185f35dce821ad3d7f08c3537",
+      "bytes": 1652
+    },
+    {
+      "path": "es/find-us.html",
+      "sha256": "282c65ebed7b936899eae2a9003a4b7af4965da8684549bb82deaedfc9ccd316",
+      "bytes": 7479
+    },
+    {
+      "path": "es/index.html",
+      "sha256": "cbfd7f58be616d7f4ff7cb9e598f2f90de742a0e33617fb79bf8c9d108c5ab86",
+      "bytes": 107278
+    },
+    {
+      "path": "es/past-champions.html",
+      "sha256": "0da3ebba61744b81f6c14f0c70a4574e587cf78609a6c17e62d88bdc336b10d3",
+      "bytes": 62506
+    },
+    {
+      "path": "find-us.html",
+      "sha256": "f2d83e99ea8c0f89525a1bb6824fe197cece614a76430f54831244def2f27f5f",
+      "bytes": 7095
+    },
+    {
+      "path": "fonts.css",
+      "sha256": "07e38c0020d3187a0ed78f0049ebbb8a261a7ac22b6c557832736fa098eaa31a",
+      "bytes": 903
+    },
+    {
+      "path": "index.html",
+      "sha256": "39a3ccf037bdc30ec0375fc83720e5bbea16ba4c7f0492601a40ee362e32b3fb",
+      "bytes": 99322
+    },
+    {
+      "path": "js-flag.js",
+      "sha256": "9ab49027959472a353e2cc17fac2dcd7b5fd01da82f3989911272582f249b153",
+      "bytes": 46
+    },
+    {
+      "path": "past-champions.html",
+      "sha256": "b9d76d0ed26ef5052b87404ee090f7e2f24ff2af1801b5927cda1f635fe8a2b3",
+      "bytes": 56605
+    },
+    {
+      "path": "style.css",
+      "sha256": "67d97df7f8dbb7877fb7dae26051dbb3c98b7e953dcf38a501ca6dbeeca91e8e",
+      "bytes": 38755
+    }
+  ],
+  "changelog": [
+    {
+      "version": "1.0",
+      "date": "2026-10-20",
+      "summary": "First build. Celebration of the 2025–26 season, team and coaches, BIOGLOW ideas, support asks with a pledge builder, GM robotics/STEM/autonomy section, half-sheet cake design with printable baker's sheet, visit-day run of show, 27 sources."
+    },
+    {
+      "version": "1.1",
+      "date": "2026-10-20",
+      "summary": "Team section now states that last year's nine fourth-graders moved up to Parkway Intermediate (grades 5–6) and that 2026–27 is a new team picking up the torch. Added a 2026–27 roster block (first names only, coach-supplied). All student names reduced to first names. Every factual claim now carries at least two sources (59 sources, conflicts noted). Added this HIBT-AIGovOps ledger with browser re-verification, and thanks to the AIGovOps Foundation, Bob Rapp and Ken Johnston. Published to a permanent public URL."
+    },
+    {
+      "version": "1.2",
+      "date": "2026-10-20",
+      "summary": "Cake order sheet is now downloadable as a PDF (assets/cake-order-sheet.pdf) in addition to printable. Pledge form gained Download-as-file and Email-the-school (opens the user's mail app addressed to the Columbia Ridge office; nothing is sent automatically). Removed the in-page roster editor; the 2026–27 roster is posted only when the coaches supply first names. Published to gm-cares-about-ridge-robotics.pplx.app and mirrored in the public GitHub repo bobrapp/gm-cares-about-ridge-robotics."
+    },
+    {
+      "version": "1.3",
+      "date": "2026-10-20",
+      "summary": "New 'Find us and support us' page (find-us.html) with a large QR code to the published site, copy/share, QR PNG download and a printable poster. Every page's footer now carries a small QR code and the share link. Nav gained a 'Find us & support us' entry."
+    },
+    {
+      "version": "1.4",
+      "date": "2026-10-20",
+      "summary": "2026–27 roster added for FIRST LEGO League team #36203 ([name withheld], [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], Coach Keegan), each with a code-drawn, gender-neutral robot avatar; last year's nine got avatars too. Coach Keegan is now the only adult named on the page."
+    },
+    {
+      "version": "1.5",
+      "date": "2026-10-20",
+      "summary": "Privacy, PII, children's-data and accessibility hardening: fonts self-hosted (no third-party requests), Content Security Policy and referrer policy added, new 'Privacy and protecting kids' section with coach checklist and removal path, pledge note guidance against student details, 48 WCAG contrast failures fixed to zero axe-core violations, review published as PRIVACY-AND-ACCESSIBILITY-REVIEW.md, 7 new legal/policy sources (66 total)."
+    },
+    {
+      "version": "1.6",
+      "date": "2026-10-20",
+      "summary": "Offline single-file build (offline/ridge-robotics-gm-cares-offline.html) with CSS, fonts, images, PDF, QR and ledger inlined, downloadable from every footer and the Find-us page for schools that block the host. GitHub Pages enabled as a mirror at bobrapp.github.io/gm-cares-about-ridge-robotics. Share buttons always share the canonical address. Dropped the meta frame-ancestors directive. The offline bundle embeds hibt.json and is therefore excluded from the hash chain by design."
+    },
+    {
+      "version": "1.7",
+      "date": "2026-10-21",
+      "summary": "New page and menu item 'Past Champions: What Can We Learn?' — the FIRST LEGO League Challenge World Festival Champion's Award podium (winner + finalists) for MASTERPIECE 2024, SUBMERGED 2025 and UNEARTHED 2026 (18 teams, global), a tutorial on how the Champion's Award is scored, nine team profiles (robot build, software, project design, presentation and Core Values, why they scored highly) with public team/school contacts only, and 25 page-specific sources. Restored the mobile table-stacking CSS that an earlier print-stylesheet rewrite had dropped. 'Visit day' left the top nav (section remains). Offline bundle now includes the new page."
+    },
+    {
+      "version": "1.8",
+      "date": "2026-10-21",
+      "summary": "Full Spanish edition (es/index.html, es/find-us.html, es/past-champions.html) with EN/ES switch in every header, hreflang alternates and Spanish UI strings; Spanish offline single-file build. 'Prior chapters' section with links to every earlier season document and sibling programs. 'Small towns, big trophies' table of award-winning rural FIRST LEGO League teams in Washington, Idaho and Montana (11 rows, sourced). Automated end-to-end suite (182 checks: links, anchors, footnotes, privacy guards, CSP, fonts, images, overflow, axe-core, nav, flows, HIBT verification, offline files, external source reachability, live hosts) with TEST-REPORT.md committed. Teacher ZIP package."
+    },
+    {
+      "version": "1.9",
+      "date": "2026-10-24",
+      "summary": "At the Ephrata School District's request: the page is now a celebration of the team's season only. Removed the How-to-help section (volunteer and contribution asks, travel fund, GM employee giving guidance), the pledge builder and its email/download actions, the Help nav item and hero call to action, and all pledge references on the Find-us page, visit-day run of show and privacy section; four now-unused fundraising sources removed. Corrected the description of the team's club status. This season's student first names are hidden ('Name pending') until family permission slips are returned, and were redacted from this ledger's earlier entries. 'Find us and support us' is now 'Find us and cheer us on'."
+    }
+  ],
+  "entries": [
+    {
+      "seq": 1,
+      "version": "1.0",
+      "timestamp": "2026-10-20T11:20:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester · Principal AI Architect, General Motors · GM Cares volunteer",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator); images: GPT Image 2.5 via the Computer media tool",
+      "prompt": "Create a supportive webapp for this team in Ephrata, WA for a GM Cares visit on October 22, 2026 by Bob Rapp (Principal AI Architect, General Motors) and Shari Smith (retired Microsoft techie and friend of Ephrata). Make this a celebration, a review of this amazing team, some ideas for this year's FIRST robotics competition, a highlight for the teachers who advise on this, a website that can be shared with the team to garner support (volunteers, contributions to their trip to finals), and some winning ways that GM supports robotics, self-driving via Cruise, our work with kids in STEM fields, and a design for an amazing 1/2 sheet cake that includes Ridge Robotics and GM Cares! in the colors of GM and the mascot and colors of the elementary school. Background supplied: Ridge Robotics is the FIRST LEGO League team at Columbia Ridge Elementary; in early 2026 the 9-member squad won Engineering Excellence and Core Values awards, was drawn as one of ten Washington teams, and in June 2026 scored a personal-best 180 points at the American Robotics Open in New Jersey and sang the National Anthem.",
+      "result": "Researched the team, school colors (Archer Orange #F57B20, black), the BIOGLOW season and GM programs; generated three images (cake rendering, hero robot, BIOGLOW ecosystem); built a single-page static site with pledge builder, share link and printable cake order sheet; QA at 1400px and 375px; deployed preview.",
+      "files_changed": [
+        "index.html",
+        "style.css",
+        "base.css",
+        "app.js",
+        "assets/cake-design.webp",
+        "assets/cake-design-print.jpg",
+        "assets/hero-robot.webp",
+        "assets/bioglow-ideas.webp"
+      ],
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "chain": "5c8f0139c024be4420b7409fe5b6cde39ae864bc8f2ac2366fb0bcd5cb5b8d62"
+    },
+    {
+      "seq": 2,
+      "version": "1.1",
+      "timestamp": "2026-10-20T12:40:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator)",
+      "prompt": "Mention that last year's team moved up to Parkway Intermediate, and that this is a new team picking up the torch. Add current roster, and make sure only to use first names for all kids. Make these changes and let me take a look, and make sure all facts have at least two sources, and that you show this as a version-controlled HIBT-AIGovOps and thanks to the AIGovOps Foundation and Bob and Ken for their work to make AI safer.",
+      "result": "Added the Parkway hand-off and new-team framing; 2025–26 roster reduced to first names; added a 2026–27 roster block that the coaches fill in (no public roster exists yet, so no names were invented); re-sourced every claim with at least two citations (59 sources) and flagged conflicts (team size nine vs. ten; Core Values award venue; NJIT vs. Drew; Dollars for Doers $200 vs. $500); added this ledger, the changelog, the hash chain and in-browser verification; added thanks to the AIGovOps Foundation, Bob Rapp and Ken Johnston.",
+      "files_changed": [
+        "index.html",
+        "style.css",
+        "app.js",
+        "hibt.json"
+      ],
+      "prev": "5c8f0139c024be4420b7409fe5b6cde39ae864bc8f2ac2366fb0bcd5cb5b8d62",
+      "chain": "1efcabbd89ca42bf4ca10cc09d71ef49cf7d2e56f123632508b00e6051915d14"
+    },
+    {
+      "seq": 3,
+      "version": "1.1",
+      "timestamp": "2026-10-20T12:45:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator)",
+      "prompt": "And make this a permanent hosted site publicly available.",
+      "result": "Preview redeployed, then published to https://ridge-robotics-gm-cares.pplx.app. First live verification showed index.html differing from the ledger because the CDN injected an email-obfuscation script; the contact address is now assembled client-side so the served HTML matches the recorded hash, and the site was republished.",
+      "files_changed": [
+        "index.html",
+        "app.js",
+        "hibt.json"
+      ],
+      "prev": "1efcabbd89ca42bf4ca10cc09d71ef49cf7d2e56f123632508b00e6051915d14",
+      "chain": "d8ee4c64d8be3e7939a1448109dc202ae9415fbc0d0756d65ae98d9148105ecb"
+    },
+    {
+      "seq": 4,
+      "version": "1.2",
+      "timestamp": "2026-10-20T13:05:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator)",
+      "prompt": "Now where is this hosted so it can be viewed as a webpage for this year; also create it as a downloadable file that can be given to the teachers; do not have any edits for the current team, but do allow someone to fill out a form and export it and email to the school; run end-to-end tests; translate the entire site from English to Spanish; give pointers to the prior chapter work; plus winning top 10 grade 1–4 FIRST robotics teams in rural areas of WA, Idaho and Montana (up to 10). Then: Publish this app to gm-cares-about-ridge-robotics.pplx.app. Then: create a public repo called gm-cares-about-ridge-robotics in my @bobrapp GitHub and make sure I can download the cake decoration order as well as print it.",
+      "result": "Published v1.1 to gm-cares-about-ridge-robotics.pplx.app. v1.2: removed roster editor; added pledge download (.txt) and email-the-school (mailto) actions; added downloadable cake order PDF; created public GitHub repo bobrapp/gm-cares-about-ridge-robotics with full history and build tooling. Spanish translation, prior-season links, rural champions list, teacher download package and the full end-to-end test report follow in v1.3.",
+      "files_changed": [
+        "index.html",
+        "app.js",
+        "assets/cake-order-sheet.pdf",
+        "hibt.json"
+      ],
+      "prev": "d8ee4c64d8be3e7939a1448109dc202ae9415fbc0d0756d65ae98d9148105ecb",
+      "chain": "7c9453011e96494cbf4c4feffbba584058fe0607cabd81b2f1d09582be657f19"
+    },
+    {
+      "seq": 5,
+      "version": "1.3",
+      "timestamp": "2026-10-20T13:30:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator)",
+      "prompt": "Add a BIG QR code that points to this website that is easy to show and share; add it to its own page called 'Find us and support us'; plus put a link at the bottom of each page with a small QR code to the published share.",
+      "result": "Generated QR codes (SVG + PNG, error-correction level H) for https://gm-cares-about-ridge-robotics.pplx.app, verified they decode; built find-us.html with the large code, share/copy, PNG download and print poster; added footer share block with small QR to both pages; QA at desktop and 375px; republished.",
+      "files_changed": [
+        "find-us.html",
+        "index.html",
+        "style.css",
+        "app.js",
+        "assets/qr-site.svg",
+        "assets/qr-site.png",
+        "assets/qr-site-print.png",
+        "hibt.json"
+      ],
+      "prev": "7c9453011e96494cbf4c4feffbba584058fe0607cabd81b2f1d09582be657f19",
+      "chain": "df5be0f6997f71dc332393d15e43aaa2ed2f12ef862583fe82368640abe2fa45"
+    },
+    {
+      "seq": 6,
+      "version": "1.4",
+      "timestamp": "2026-10-20T13:55:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator)",
+      "prompt": "Update the app with robotics fun cartoon avatars, gender neutral, for each name; only have Coach Keegan, drop the other adult. Ridge Robotics #36203: [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], [name withheld], Coach Keegan.",
+      "result": "Added the supplied first-name roster with team number #36203; generated 19 deterministic SVG robot avatars in code (no image model, no likenesses); removed the second coach from all copy including the pledge greeting; coach card shows her avatar; republished.",
+      "files_changed": [
+        "index.html",
+        "find-us.html",
+        "style.css",
+        "app.js",
+        "hibt.json"
+      ],
+      "prev": "df5be0f6997f71dc332393d15e43aaa2ed2f12ef862583fe82368640abe2fa45",
+      "chain": "0938d768fe69faef5a023a1dad6588d62ca466558ef51cf0ab5a4e4c5845358a"
+    },
+    {
+      "seq": 7,
+      "version": "1.5",
+      "timestamp": "2026-10-20T14:30:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator)",
+      "prompt": "Review this site for accessibility, privacy, PII, and all rules relating to any issues sharing data about children in WA state, and make this site work well in all ways to protect everyone.",
+      "result": "Ran axe-core (WCAG 2.1 A/AA + best-practice) on both pages at desktop and mobile; fixed all contrast failures; removed the only third-party dependency by self-hosting fonts; added CSP and referrer policy; added a privacy and child-safety section grounded in FERPA, RCW 28A.604 (SUPER Act), COPPA and the FIRST Youth Protection Program; added coach checklist and removal path; committed a written review to the repo.",
+      "files_changed": [
+        "index.html",
+        "find-us.html",
+        "style.css",
+        "fonts.css",
+        "js-flag.js",
+        "assets/fonts/*",
+        "PRIVACY-AND-ACCESSIBILITY-REVIEW.md",
+        "hibt.json"
+      ],
+      "prev": "0938d768fe69faef5a023a1dad6588d62ca466558ef51cf0ab5a4e4c5845358a",
+      "chain": "734a550967793eed8ede246040c988653e1c1a9b0256bcd6884548e6acd3a6c1"
+    },
+    {
+      "seq": 8,
+      "version": "1.6",
+      "timestamp": "2026-10-20T15:00:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator)",
+      "prompt": "Make sure this is on the GitHub repo and fully synced, offer an option to download the entire app as a single HTML in case the school restricts access to this site, and also use GitHub Pages for a secondary hosting site.",
+      "result": "Verified local and remote main match; added build/build_single.py producing the offline single-file app; linked it from footers and Find-us; enabled GitHub Pages from main (root) with .nojekyll; added mirror links; republished both pplx.app addresses.",
+      "files_changed": [
+        "index.html",
+        "find-us.html",
+        "app.js",
+        "build/build_single.py",
+        "build/gen_hibt.py",
+        "offline/ridge-robotics-gm-cares-offline.html",
+        ".nojekyll",
+        "hibt.json"
+      ],
+      "prev": "734a550967793eed8ede246040c988653e1c1a9b0256bcd6884548e6acd3a6c1",
+      "chain": "bf3c9641fd1d332c2ad85f09d7a51113f57c00781ba3901aad23d44da12d6598"
+    },
+    {
+      "seq": 9,
+      "version": "1.7",
+      "timestamp": "2026-10-21T09:30:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator)",
+      "prompt": "Create a link and tutorial to the last 10 winning teams in the 4th grade league (same as Ridge Robotics) in the last three years — the top 3 finishers — with a review of the team, summary of their challenge, how they approached it (robot build, software build, presentation, design), why their team scored so highly; create a roster of winning teams as an example for Ridge Robotics; give a contact for each team coach and school; make this a global list; add a new menu item called Past Champions: What Can We Learn?",
+      "result": "Built past-champions.html from FIRST's official World Festival award lists (2024, 2025, 2026) plus team, school, lab and museum publications; profiled the three winners and six finalists with the best documentation; listed all 18 podium teams; published only public team/school/organization contact channels (no personal numbers), consistent with the site's privacy policy; axe-core 0 violations; added to nav on all pages and to the offline bundle.",
+      "files_changed": [
+        "past-champions.html",
+        "index.html",
+        "find-us.html",
+        "style.css",
+        "build/build_single.py",
+        "offline/ridge-robotics-gm-cares-offline.html",
+        "hibt.json"
+      ],
+      "prev": "bf3c9641fd1d332c2ad85f09d7a51113f57c00781ba3901aad23d44da12d6598",
+      "chain": "7af727a33edb6a9a61820568b26ecdfe08125fa87c902d9f61f890f745b3e226"
+    },
+    {
+      "seq": 10,
+      "version": "1.8",
+      "timestamp": "2026-10-21T11:00:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester",
+      "model": "Claude Fable 5.1 (Perplexity Computer orchestrator); Spanish translation drafted by GPT-6 Luna via the Computer LLM tool under a preserve-markup instruction, then structurally validated (tags, links, ids, footnotes identical) and spot-read",
+      "prompt": "Do all the queued items (Spanish version of the whole site, prior-season links, rural WA/ID/MT champions list, teacher download package, written end-to-end test report).",
+      "result": "Shipped all five: Spanish edition with language switch; prior-chapters links; rural champions table; teacher ZIP; automated E2E suite and report. Fixed Spanish nav width and a lang-switch accessible-name mismatch found by the suite.",
+      "files_changed": [
+        "es/*",
+        "index.html",
+        "find-us.html",
+        "past-champions.html",
+        "style.css",
+        "app.js",
+        "build/build_single.py",
+        "offline/*",
+        "TEST-REPORT.md",
+        "hibt.json"
+      ],
+      "prev": "7af727a33edb6a9a61820568b26ecdfe08125fa87c902d9f61f890f745b3e226",
+      "chain": "405c6f0c4614bc1637803a4839830aedcc617b0263bc9438354e9e98ffd90abc"
+    },
+    {
+      "seq": 11,
+      "version": "1.9",
+      "timestamp": "2026-10-24T10:00:00-07:00",
+      "person": "Bob Rapp",
+      "role": "Requester, relaying the head coach and the school district",
+      "model": "Claude Opus 5.5 (Perplexity Computer orchestrator)",
+      "prompt": "[Paraphrased; internal district correspondence is not published.] The head coach relayed a request from the Ephrata School District: keep the page as a celebration of the team's season; remove the fundraising and pledge content, since it would support only one of the district's two robotics teams; and correct the description of the team's club status. The coach is collecting family permission slips for students' names.",
+      "result": "Removed all fundraising, pledge and ASB content in English and Spanish; withheld this season's first names pending permission slips and redacted them from the ledger; reran the end-to-end suite with new negative checks; republished all hosts.",
+      "files_changed": [
+        "index.html",
+        "find-us.html",
+        "past-champions.html",
+        "es/*",
+        "build/ledger.json",
+        "hibt.json",
+        "offline/*",
+        "TEST-REPORT.md"
+      ],
+      "prev": "405c6f0c4614bc1637803a4839830aedcc617b0263bc9438354e9e98ffd90abc",
+      "chain": "bba267d2c23e04f8cb9f1f69e22e5cee1ef85ad3103142d0a8eb9e345b447cea"
+    }
+  ],
+  "head": "bba267d2c23e04f8cb9f1f69e22e5cee1ef85ad3103142d0a8eb9e345b447cea"
+}

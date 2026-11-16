@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Indoor Garden Showdown — Rise Gardens vs Gardyn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-label="Logo">
+      <path d="M16 4 L16 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M16 12 C 9 12, 7 8, 8 4 C 13 5, 16 8, 16 12" fill="currentColor"/>
+      <path d="M16 18 C 23 18, 25 14, 24 10 C 19 11, 16 14, 16 18" fill="currentColor" opacity=".7"/>
+      <circle cx="16" cy="28" r="2" fill="currentColor"/>
+    </svg>
+    <div>
+      <div class="brand-title">Indoor Garden Showdown</div>
+      <div class="brand-sub">Rise Gardens 1‑Level vs Gardyn Home 4.0</div>
+    </div>
+  </div>
+  <div class="brand-meta">
+    <span class="dot dot-rise"></span> Rise
+    <span class="dot dot-gardyn"></span> Gardyn
+  </div>
+</header>
+
+<main>
+
+<!-- ======= HERO / KEY VERDICT ======= -->
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Two smart gardens, two philosophies.</h1>
+    <p class="lede">
+      Rise Gardens leans modular and mechanical — a wood‑and‑steel cabinet you can stack to 108 plants.
+      Gardyn leans software‑first — a 2 sq ft vertical tower with cameras and an AI assistant.
+      Use the controls below to see which one fits <em>your</em> kitchen, budget, and patience.
+    </p>
+  </div>
+  <div class="hero-score">
+    <div class="score-card score-rise">
+      <div class="score-label">Rise Gardens · 1‑Level</div>
+      <div class="score-num" id="score-rise">—</div>
+      <div class="score-sub">weighted match score</div>
+    </div>
+    <div class="score-card score-gardyn">
+      <div class="score-label">Gardyn Home 4.0</div>
+      <div class="score-num" id="score-gardyn">—</div>
+      <div class="score-sub">weighted match score</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FILTERS ======= -->
+<section class="filters card">
+  <div class="filters-head">
+    <h2>Tune the comparison</h2>
+    <p>Adjust your priorities and assumptions. Costs, charts, and the verdict update live.</p>
+  </div>
+
+  <div class="filters-grid">
+
+    <div class="filter">
+      <label>Electricity rate <span class="val" id="rate-val">$0.20</span>/kWh</label>
+      <input type="range" id="rate" min="0.08" max="0.40" step="0.01" value="0.20" />
+      <div class="range-foot"><span>$0.08</span><span>$0.40</span></div>
+    </div>
+
+    <div class="filter">
+      <label>Time budget <span class="val" id="time-val">15</span> min/week</label>
+      <input type="range" id="time" min="2" max="60" step="1" value="15" />
+      <div class="range-foot"><span>Hands‑off</span><span>Hobbyist</span></div>
+    </div>
+
+    <div class="filter">
+      <label>Horizon <span class="val" id="years-val">2</span> years</label>
+      <input type="range" id="years" min="1" max="5" step="1" value="2" />
+      <div class="range-foot"><span>1 yr</span><span>5 yr</span></div>
+    </div>
+
+    <div class="filter">
+      <label>Include Gardyn membership ($39/mo)</label>
+      <div class="toggle">
+        <input type="checkbox" id="membership" checked />
+        <label for="membership"><span></span></label>
+        <span class="toggle-hint" id="membership-hint">On — full Kelby AI features</span>
+      </div>
+    </div>
+
+    <div class="filter weights">
+      <label>What matters to you?</label>
+      <div class="weight-grid">
+        <div class="weight">
+          <span>Upfront price</span>
+          <input type="range" id="w-price" min="0" max="5" step="1" value="3" />
+          <span class="w-num" data-for="w-price">3</span>
+        </div>
+        <div class="weight">
+          <span>Plant capacity</span>
+          <input type="range" id="w-capacity" min="0" max="5" step="1" value="3" />
+          <span class="w-num" data-for="w-capacity">3</span>
+        </div>
+        <div class="weight">
+          <span>Low maintenance</span>
+          <input type="range" id="w-maint" min="0" max="5" step="1" value="3" />
+          <span class="w-num" data-for="w-maint">3</span>
+        </div>
+        <div class="weight">
+          <span>Expandability</span>
+          <input type="range" id="w-expand" min="0" max="5" step="1" value="2" />
+          <span class="w-num" data-for="w-expand">2</span>
+        </div>
+        <div class="weight">
+          <span>Reliability</span>
+          <input type="range" id="w-reliab" min="0" max="5" step="1" value="4" />
+          <span class="w-num" data-for="w-reliab">4</span>
+        </div>
+        <div class="weight">
+          <span>Energy efficiency</span>
+          <input type="range" id="w-energy" min="0" max="5" step="1" value="2" />
+          <span class="w-num" data-for="w-energy">2</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======= TOTAL COST ======= -->
+<section class="grid-2">
+  <div class="card">
+    <div class="card-head">
+      <h2>Total cost over horizon</h2>
+      <p>Hardware + electricity + (optional) Gardyn membership.</p>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi kpi-rise">
+        <div class="kpi-label">Rise Gardens</div>
+        <div class="kpi-num" id="cost-rise">—</div>
+        <div class="kpi-foot" id="cost-rise-foot"></div>
+      </div>
+      <div class="kpi kpi-gardyn">
+        <div class="kpi-label">Gardyn Home 4.0</div>
+        <div class="kpi-num" id="cost-gardyn">—</div>
+        <div class="kpi-foot" id="cost-gardyn-foot"></div>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="cost-chart"></canvas></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <h2>Profile match</h2>
+      <p>How each system scores on the dimensions you care about.</p>
+    </div>
+    <div class="chart-wrap chart-radar"><canvas id="radar-chart"></canvas></div>
+  </div>
+</section>
+
+<!-- ======= SPEC TABLE ======= -->
+<section class="card">
+  <div class="card-head">
+    <h2>Side‑by‑side specifications</h2>
+    <p>Numbers in <span class="mono">monospace</span> are direct manufacturer or reviewer figures. See sources at the bottom.</p>
+  </div>
+  <div class="table-wrap">
+    <table class="spec-table" id="spec-table">
+      <thead>
+        <tr>
+          <th>Specification</th>
+          <th class="col-rise">Rise Gardens · 1‑Level</th>
+          <th class="col-gardyn">Gardyn Home 4.0</th>
+          <th>Edge</th>
+        </tr>
+      </thead>
+      <tbody><!-- populated by JS --></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ======= HARVEST + ENERGY ======= -->
+<section class="grid-2">
+  <div class="card">
+    <div class="card-head">
+      <h2>Estimated annual harvest</h2>
+      <p>Projected pounds of greens, herbs, and fruiting plants per year.</p>
+    </div>
+    <div class="chart-wrap"><canvas id="harvest-chart"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <h2>Energy draw</h2>
+      <p>Monthly kWh and resulting electricity cost at your chosen rate.</p>
+    </div>
+    <div class="chart-wrap"><canvas id="energy-chart"></canvas></div>
+  </div>
+</section>
+
+<!-- ======= RELIABILITY ======= -->
+<section class="card reliability">
+  <div class="card-head">
+    <h2>User reliability signal</h2>
+    <p>Aggregated from Trustpilot, Reddit communities, BBB complaints, and major review sites. Higher is better.</p>
+  </div>
+  <div class="reliab-grid">
+    <div class="reliab-card">
+      <div class="reliab-head">
+        <span class="dot dot-rise"></span>
+        <strong>Rise Gardens</strong>
+        <span class="reliab-num" id="reliab-rise-num">—</span>
+      </div>
+      <div class="reliab-bar"><div class="reliab-fill rise" id="reliab-rise-bar"></div></div>
+      <ul class="reliab-list">
+        <li><span class="tick">+</span> Owners report sturdy wood/steel build holding up over multiple growing seasons (<a href="https://www.familyhandyman.com/article/rise-indoor-garden-review/" target="_blank" rel="noopener">Family Handyman</a>).</li>
+        <li><span class="tick">+</span> 3‑year hardware <em>and</em> electronic warranty — longest in this comparison (<a href="https://risegardens.com/pages/warranty" target="_blank" rel="noopener">Rise warranty policy</a>).</li>
+        <li><span class="warn">–</span> Mixed Trustpilot signal (≈3.6/5 across 199 reviews) — mostly shipping/customer service, not hardware (<a href="https://www.trustpilot.com/review/risegardens.com" target="_blank" rel="noopener">Trustpilot</a>).</li>
+      </ul>
+    </div>
+    <div class="reliab-card">
+      <div class="reliab-head">
+        <span class="dot dot-gardyn"></span>
+        <strong>Gardyn Home 4.0</strong>
+        <span class="reliab-num" id="reliab-gardyn-num">—</span>
+      </div>
+      <div class="reliab-bar"><div class="reliab-fill gardyn" id="reliab-gardyn-bar"></div></div>
+      <ul class="reliab-list">
+        <li><span class="tick">+</span> 4.0 adds per‑pod cameras and improved monitoring vs older models (<a href="https://www.businessinsider.com/guides/home/gardyn-home-4-review" target="_blank" rel="noopener">Business Insider</a>).</li>
+        <li><span class="warn">–</span> Recurring complaints of pump and lid failures around the 1–2 year mark; out‑of‑warranty lid replacements quoted at $190 (<a href="https://www.bbb.org/us/md/bethesda/profile/food-manufacturing-equipment/gardyn-inc-0241-236061632/complaints" target="_blank" rel="noopener">BBB complaints</a>, <a href="https://www.trustpilot.com/review/mygardyn.com" target="_blank" rel="noopener">Trustpilot</a>).</li>
+        <li><span class="warn">–</span> Standard warranty is 24 months on hardware (extended 36 mo available at purchase) (<a href="https://mygardyn.com/policy/warranty/" target="_blank" rel="noopener">Gardyn warranty</a>).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======= VERDICT ======= -->
+<section class="card verdict">
+  <div class="card-head">
+    <h2>The verdict, given your settings</h2>
+  </div>
+  <div id="verdict-body" class="verdict-body"></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h3>Sources</h3>
+      <ul>
+        <li><a href="https://risegardens.com/products/the-rise-garden-2" target="_blank" rel="noopener">Rise Gardens — product page (pricing, dimensions, capacity)</a></li>
+        <li><a href="https://risegardens.com/pages/faqs" target="_blank" rel="noopener">Rise Gardens — FAQs (energy use, maintenance)</a></li>
+        <li><a href="https://risegardens.com/pages/warranty" target="_blank" rel="noopener">Rise Gardens — warranty policy</a></li>
+        <li><a href="https://mygardyn.com/product/gardyn-home-kit/" target="_blank" rel="noopener">Gardyn — Home 4 product page</a></li>
+        <li><a href="https://mygardyn.com/policy/warranty/" target="_blank" rel="noopener">Gardyn — warranty policy</a></li>
+        <li><a href="https://mygardyn.com/blog/5-minute-daily-garden/" target="_blank" rel="noopener">Gardyn — maintenance time breakdown</a></li>
+        <li><a href="https://www.businessinsider.com/guides/home/gardyn-home-4-review" target="_blank" rel="noopener">Business Insider — Gardyn 4.0 review</a></li>
+        <li><a href="https://www.bestbuy.com/product/gardyn-home-4-0-vertical-indoor-drip-hydroponics-growing-system-w-led-grow-lights-30-non-gmo-plants-herbs-vegetables-white/J3R8KGVCPF" target="_blank" rel="noopener">Best Buy — Gardyn 4.0 yield (8–10 lbs/mo)</a></li>
+        <li><a href="https://www.familyhandyman.com/article/rise-indoor-garden-review/" target="_blank" rel="noopener">Family Handyman — Rise review</a></li>
+        <li><a href="https://www.trustpilot.com/review/mygardyn.com" target="_blank" rel="noopener">Trustpilot — Gardyn reviews</a></li>
+        <li><a href="https://www.trustpilot.com/review/risegardens.com" target="_blank" rel="noopener">Trustpilot — Rise Gardens reviews</a></li>
+        <li><a href="https://www.bbb.org/us/md/bethesda/profile/food-manufacturing-equipment/gardyn-inc-0241-236061632/complaints" target="_blank" rel="noopener">BBB — Gardyn complaints</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Notes on methodology</h3>
+      <p>
+        Rise upfront price reflects a fully‑outfitted 1‑level configuration commonly seen at retail (~$1,020). Base Rise 1‑Level can be found at $799 directly. Gardyn Home 4.0 is shown at its current $899 list price; promotional pricing as low as $799 has been observed.
+      </p>
+      <p>
+        Energy figures: Rise 1‑Level draws 75 W (lights on) / 15 W (lights off) on a 16/8 cycle ≈ 43 kWh/mo per the manufacturer FAQ; we use 51 kWh/mo as a conservative real‑world estimate including pump cycles. Gardyn 4.0 is shown at 47 kWh/mo (manufacturer + reviewer estimates).
+      </p>
+      <p>
+        Reliability score is a 0–100 composite weighted from public review aggregates, BBB complaint patterns, and warranty terms. It is an editorial heuristic, not a controlled study.
+      </p>
+    </div>
+  </div>
+  <div class="footer-fine">Built as an interactive comparison. Data current as of May 2026.</div>
+</footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

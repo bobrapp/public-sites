@@ -1,0 +1,51 @@
+name: Deploy sites
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Optional: on or off (leave blank to just redeploy)"
+        type: choice
+        options: ["", "on", "off"]
+        default: ""
+      slugs:
+        description: "Site slug(s), space separated"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toggle sites (manual runs)
+        if: github.event_name == 'workflow_dispatch' && inputs.action != ''
+        run: |
+          python3 scripts/sites.py "${{ inputs.action }}" ${{ inputs.slugs }}
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Turn ${{ inputs.action }}: ${{ inputs.slugs }}" && git push || true
+
+      - run: python3 scripts/sites.py build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vedara Intel — Restricted</title>
+<meta name="description" content="Restricted briefing console. Passphrase required.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F6F3ED">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,500&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ══ LOCK SCREEN — shown until the encrypted payload is decrypted ══ -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" aria-describedby="gate-sub">
+  <div class="gate-card">
+    <svg class="mark gate-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="18.25" stroke="currentColor" stroke-opacity=".42" stroke-width="1.5"/>
+      <circle cx="20" cy="20" r="11" stroke="currentColor" stroke-opacity=".26" stroke-width="1.5"/>
+      <path d="M20 20 L20 2.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M20 20 L35 29" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M9 12 L20 34 L31 12" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="20" cy="20" r="2.6" fill="var(--accent)"/>
+    </svg>
+    <p class="gate-brand"><strong>VEDARA<span class="brand-i">INTEL</span></strong></p>
+    <p class="tele gate-eyebrow"><i class="dot"></i>RESTRICTED</p>
+    <h1 class="gate-title" id="gate-title">Enter passphrase</h1>
+    <p class="gate-sub" id="gate-sub">This briefing is stored encrypted (AES-256-GCM). The passphrase never leaves this device — it derives the key that decrypts the payload in your browser.</p>
+    <form class="gate-form" id="gate-form" novalidate>
+      <label class="gate-field" for="gate-pass">
+        <span class="tele">PASSPHRASE</span>
+        <input type="password" id="gate-pass" name="passphrase" autocomplete="current-password"
+               spellcheck="false" autocapitalize="off" required
+               aria-describedby="gate-err" aria-invalid="false" placeholder="••••••••••••">
+      </label>
+      <button class="btn gate-btn" id="gate-btn" type="submit">Unlock</button>
+    </form>
+    <p class="gate-err" id="gate-err" role="alert" hidden></p>
+    <p class="tele gate-foot" id="gate-status">CIPHER: AES-256-GCM · KDF: PBKDF2-SHA256 · 310,000 ITERATIONS</p>
+  </div>
+</div>
+
+<header class="topbar" id="topbar" hidden>
+  <div class="topbar-in">
+    <a class="brand" href="#overview" aria-label="Vedara Intel — home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18.25" stroke="currentColor" stroke-opacity=".42" stroke-width="1.5"/>
+        <circle cx="20" cy="20" r="11" stroke="currentColor" stroke-opacity=".26" stroke-width="1.5"/>
+        <path d="M20 20 L20 2.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M20 20 L35 29" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M9 12 L20 34 L31 12" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="2.6" fill="var(--accent)"/>
+      </svg>
+      <span class="brand-txt">
+        <strong>VEDARA<span class="brand-i">INTEL</span></strong>
+        <em>Meeting-prep console</em>
+      </span>
+    </a>
+    <div class="topbar-meta" id="topmeta"></div>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">Sections</button>
+  </div>
+  <nav class="nav" id="nav" aria-label="Briefing sections"></nav>
+</header>
+
+<main id="main" hidden>
+  <!-- ══ OVERVIEW ══ -->
+  <section class="panel" id="overview" data-title="Overview">
+    <div class="hero">
+      <p class="eyebrow">Briefing 01 · Overview</p>
+      <h1 id="ov-h1"></h1>
+      <blockquote class="thesis">
+        <span class="tele" id="ov-thesis-lbl"></span>
+        <p id="thesis-line"></p>
+      </blockquote>
+    </div>
+    <div class="facts" id="facts"></div>
+    <div class="subhead"><h2>Why you two fit</h2><span class="rule"></span></div>
+    <div class="fitgrid" id="fitgrid"></div>
+  </section>
+
+  <!-- ══ DAVE ══ -->
+  <section class="panel" id="dave" data-title="Dave">
+    <div class="phead">
+      <p class="eyebrow">Briefing 02 · The Person</p>
+      <h1 id="dave-h1"></h1>
+      <p class="lede" id="dave-lede"></p>
+    </div>
+    <div class="subhead"><h2>Career arc</h2><span class="rule"></span></div>
+    <ol class="timeline" id="timeline"></ol>
+    <div class="subhead"><h2>Voice &amp; values</h2><span class="rule"></span></div>
+    <div class="voicegrid" id="voicegrid"></div>
+    <div class="subhead"><h2>Do / don't</h2><span class="rule"></span></div>
+    <div class="dd">
+      <div class="ddcol do"><h3><span class="tele">DO</span></h3><ul id="dos"></ul></div>
+      <div class="ddcol dont"><h3><span class="tele">DON'T</span></h3><ul id="donts"></ul></div>
+    </div>
+    <aside class="note">
+      <span class="tele" id="note-name-lbl"></span>
+      <p id="note-name"></p>
+    </aside>
+    <aside class="note">
+      <span class="tele" id="note-personal-lbl"></span>
+      <p id="note-personal"></p>
+    </aside>
+  </section>
+
+  <!-- ══ UTTERANCES ══ -->
+  <section class="panel" id="utterances" data-title="Utterances">
+    <div class="phead">
+      <p class="eyebrow">Briefing 03 · Utterances Explorer</p>
+      <h1 id="utt-h1"></h1>
+      <p class="lede" id="utt-note"></p>
+    </div>
+    <div class="controls">
+      <div class="chips" id="chips" role="group" aria-label="Filter by theme"></div>
+      <div class="ctl-row">
+        <label class="srch"><span class="tele">SEARCH</span><input type="search" id="q" placeholder="quote, topic, venue…" autocomplete="off"></label>
+        <button class="btn ghost" id="sortbtn" aria-live="polite">Newest first</button>
+      </div>
+      <p class="tele count" id="uttcount"></p>
+    </div>
+    <ol class="utts" id="utts"></ol>
+    <p class="empty" id="utt-empty" hidden>No posts match that filter. <button class="linkbtn" id="clearall">Clear filters</button></p>
+  </section>
+
+  <!-- ══ VEDARA ══ -->
+  <section class="panel" id="vedara" data-title="Vedara">
+    <div class="phead">
+      <p class="eyebrow">Briefing 04 · The Company</p>
+      <h1 id="ved-h1"></h1>
+      <p class="lede" id="ved-lede"></p>
+    </div>
+    <div class="subhead"><h2>The pitch, in their words</h2><span class="rule"></span></div>
+    <dl class="pitch" id="pitch"></dl>
+    <div class="subhead"><h2>Commercial model</h2><span class="rule"></span></div>
+    <blockquote class="bigquote">
+      <p id="pricing-quote"></p>
+      <cite id="pricing-cite"></cite>
+    </blockquote>
+    <div class="pricegrid" id="pricegrid"></div>
+    <div class="subhead"><h2>Industries</h2><span class="rule"></span></div>
+    <div class="indgrid" id="indgrid"></div>
+    <div class="subhead"><h2>Hiring — 6 open roles</h2><span class="rule"></span></div>
+    <div class="tablewrap">
+      <table class="dtable" id="roles">
+        <thead><tr><th>Role</th><th>Department</th><th>Location</th><th>Note</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="tinycite" id="roles-cite"></p>
+    <div class="subhead danger"><h2>Unknowns</h2><span class="rule"></span></div>
+    <p class="lede small" id="quiet"></p>
+    <div class="unknowns" id="unknowns"></div>
+  </section>
+
+  <!-- ══ COMPETITION ══ -->
+  <section class="panel" id="competition" data-title="Competition">
+    <div class="phead">
+      <p class="eyebrow">Briefing 05 · Competitive Field</p>
+      <h1 id="comp-h1"></h1>
+      <p class="lede" id="marketnote"></p>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="subhead"><h2>Comparison matrix</h2><span class="rule"></span></div>
+    <p class="tele scrollhint">↔ scroll the matrix sideways for all six players</p>
+    <div class="tablewrap wide">
+      <table class="dtable matrix" id="matrix"></table>
+    </div>
+    <div class="subhead"><h2>Read on each player</h2><span class="rule"></span></div>
+    <div class="compcards" id="compcards"></div>
+    <div class="verdict" id="verdict"></div>
+  </section>
+
+  <!-- ══ GAPS ══ -->
+  <section class="panel" id="gaps" data-title="Gap Analysis">
+    <div class="phead">
+      <p class="eyebrow">Briefing 06 · Gap Analysis</p>
+      <h1 id="gaps-h1"></h1>
+      <p class="lede" id="gaps-lede"></p>
+    </div>
+    <div class="gaps" id="gapslist"></div>
+  </section>
+
+  <!-- ══ GAME PLAN ══ -->
+  <section class="panel" id="plan" data-title="Game Plan">
+    <div class="phead">
+      <p class="eyebrow">Briefing 07 · Live</p>
+      <h1 id="plan-h1"></h1>
+      <p class="lede" id="plan-lede"></p>
+      <p class="tinycite crosslink">If the chat goes well, this is the plan to reference → <a href="#plan306090">08 · 30-60-90 Plan</a></p>
+    </div>
+    <div class="phasebar" id="phasebar" role="tablist" aria-label="Call phases"></div>
+    <div class="phasebody" id="phasebody"></div>
+    <div class="subhead"><h2>Landmines</h2><span class="rule"></span></div>
+    <div class="mines" id="mines"></div>
+    <div class="subhead"><h2>Live checklist</h2><span class="rule"></span></div>
+    <div class="cl-head">
+      <div class="progwrap">
+        <div class="progbar"><span id="progfill"></span></div>
+        <p class="tele" id="progtxt">0 / 0 checked</p>
+      </div>
+      <button class="btn ghost" id="resetcl">Reset checklist</button>
+    </div>
+    <ul class="checklist" id="checklist"></ul>
+    <p class="tinycite">Checked items are saved in this browser only (localStorage). No backend, nothing leaves this device.</p>
+  </section>
+
+  <!-- ══ 30-60-90 PLAN ══ -->
+  <section class="panel" id="plan306090" data-title="30-60-90">
+    <div class="phead">
+      <p class="eyebrow">Briefing 08 · Ninety Days</p>
+      <h1>The 30-60-90 plan</h1>
+      <p class="lede" id="plan-intro"></p>
+      <blockquote class="thesis">
+        <span class="tele">GUIDING PRINCIPLE</span>
+        <p id="plan-principle"></p>
+      </blockquote>
+    </div>
+    <div class="subhead"><h2>Regulatory clock — 2026</h2><span class="rule"></span></div>
+    <div class="clockstrip" id="regclock"></div>
+    <div class="subhead"><h2>Three lanes</h2><span class="rule"></span></div>
+    <div class="lanes" id="planlanes"></div>
+    <p class="tinycite">Every milestone, artifact and KPI above is taken from the deep-research plan of August 3, 2026; each regulatory anchor links to its primary source.</p>
+  </section>
+
+  <!-- ══ F100 MARKET ══ -->
+  <section class="panel" id="f100" data-title="F100 Market">
+    <div class="phead">
+      <p class="eyebrow">Briefing 09 · Fortune 100 Market</p>
+      <h1>Global Fortune 100 approach</h1>
+      <p class="lede" id="f100-intro"></p>
+    </div>
+    <div class="subhead"><h2>Spend concentration</h2><span class="rule"></span></div>
+    <div class="kpis" id="f100kpis"></div>
+    <div class="kpis moneykpis" id="f100money"></div>
+    <div class="subhead"><h2>Where the dollars sit, by vertical</h2><span class="rule"></span></div>
+    <div class="autogrid" id="f100verticals" style="--col-min:330px"></div>
+    <div class="subhead"><h2>Buying-center map</h2><span class="rule"></span></div>
+    <div class="autogrid" id="f100buyers" style="--col-min:290px"></div>
+    <aside class="note"><span class="tele">THE PAIRING</span><p id="f100buyers-note"></p></aside>
+    <div class="subhead"><h2>Regional sequencing</h2><span class="rule"></span></div>
+    <ol class="timeline" id="f100regions"></ol>
+    <div class="subhead"><h2>Entry sequence</h2><span class="rule"></span></div>
+    <div class="phasebody"><ul class="points" id="f100seq"></ul></div>
+    <div class="subhead"><h2>Competitive whitespace</h2><span class="rule"></span></div>
+    <p class="tele scrollhint">↔ scroll the table sideways for all columns</p>
+    <div class="tablewrap wide">
+      <table class="dtable comptable" id="f100comp"></table>
+    </div>
+    <aside class="note"><span class="tele">THE ACTUAL WHITESPACE</span><p id="f100-whitespace"></p></aside>
+    <div class="subhead"><h2>Land-expand deal structures</h2><span class="rule"></span></div>
+    <div class="autogrid" id="f100deals" style="--col-min:300px"></div>
+    <div class="subhead"><h2>22-account target shortlist</h2><span class="rule"></span></div>
+    <div class="controls">
+      <div class="chips" id="vertchips" role="group" aria-label="Filter accounts by vertical"></div>
+      <p class="tele count" id="acctcount"></p>
+    </div>
+    <p class="tele scrollhint">↔ scroll sideways for each account’s “why now”</p>
+    <div class="tablewrap wide">
+      <table class="dtable accttable" id="accounts">
+        <thead><tr><th>#</th><th>Account</th><th>Vertical</th><th>Why now (evidence-based)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="tinycite" id="f100-accounts-note"></p>
+    <div class="subhead danger"><h2>Flagged risks</h2><span class="rule"></span></div>
+    <aside class="caution">
+      <span class="tele bad">CARRIED FORWARD FROM THE REPORT</span>
+      <ul id="f100risks"></ul>
+    </aside>
+  </section>
+
+  <!-- ══ SOURCES ══ -->
+  <section class="panel" id="sources" data-title="Sources">
+    <div class="phead">
+      <p class="eyebrow">Briefing 10 · Sources</p>
+      <h1>Every citation</h1>
+      <p class="lede" id="src-lede"></p>
+    </div>
+    <div class="srcgroups" id="srcgroups"></div>
+    <div class="subhead"><h2>Confirmed research gaps</h2><span class="rule"></span></div>
+    <ul class="gaplist" id="gaplist"></ul>
+  </section>
+
+  <footer class="foot">
+    <svg class="mark sm" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="18.25" stroke="currentColor" stroke-opacity=".42" stroke-width="1.5"/>
+      <path d="M20 20 L20 2.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M9 12 L20 34 L31 12" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="20" cy="20" r="2.6" fill="var(--accent)"/>
+    </svg>
+    <p id="foot-txt"></p>
+    <p class="tele">PORT: LOCAL · STATUS: LISTENING</p>
+    <button class="btn ghost lockbtn" id="lockbtn" type="button" title="Clear the cached passphrase key and re-lock this briefing">Lock</button>
+  </footer>
+</main>
+
+<script src="assets/js/data.enc.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/gate.js"></script>
+</body>
+</html>
