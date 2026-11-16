@@ -68,7 +68,7 @@
     {
       "slug": "indooor-smart-garden",
       "title": "Indoor Smart Garden Showdown",
-      "enabled": false,
+      "enabled": true,
       "listed": true,
       "former_url": "https://indooor-smart-garden.pplx.app",
       "perplexity_id": "3a73abb8-e76a-47bf-9d60-0a8e9818d0f6",
