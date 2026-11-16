@@ -2,15 +2,95 @@
   "index_title": "Bob Rapp — Sites",
   "show_index": true,
   "sites": [
-    {"slug": "builder-commons", "title": "Builder Commons — VibeRANT marketplace concept", "enabled": true, "listed": true, "former_url": "https://builder-commons.pplx.app", "perplexity_id": "731b7d33-6b08-4b90-a09d-89516160bc06", "notes": "Live state API needed a server; runs on built-in sample data."},
-    {"slug": "precisely-studio-demo", "title": "Precisely AI Studio — Live Field Test", "enabled": true, "listed": true, "former_url": "https://precisely-studio-demo.pplx.app", "perplexity_id": "579092c8-f893-483d-bc24-c575a58c7e86", "notes": ""},
-    {"slug": "gm-cares-about-ridge-robotics", "title": "GM Cares × Ridge Robotics — Celebration Day", "enabled": true, "listed": true, "former_url": "https://gm-cares-about-ridge-robotics.pplx.app (also ridge-robotics-gm-cares.pplx.app)", "perplexity_id": "be10ebf2-437f-4169-84a2-7ed932ed01fd", "notes": "Contains student and school content; review consent before keeping on."},
-    {"slug": "jp-ineke-roadtrip", "title": "João Paulo & Ineke — Sunnyvale to Seattle Road Trip", "enabled": true, "listed": true, "former_url": "https://jp-ineke-roadtrip.pplx.app", "perplexity_id": "6fb8a326-b177-4175-8c72-83e2c88bfe4a", "notes": "Personal travel plan."},
-    {"slug": "rapp-vercel-private", "title": "Vercel Diligence", "enabled": true, "listed": false, "former_url": "https://rapp-vercel-private.pplx.app", "perplexity_id": "1c06cd21-715a-4f73-827d-142d6fcdc556", "notes": "Named 'private' but was public on pplx.app; hidden from the index page."},
-    {"slug": "datacenter-ai-tradeoffs", "title": "Data Centers, AI & Social Trade-offs", "enabled": true, "listed": true, "former_url": "https://datacenter-ai-tradeoffs.pplx.app", "perplexity_id": "8cb8e0d9-7314-4d20-99c9-2fca8f786f7f", "notes": ""},
-    {"slug": "vedara-intel", "title": "Vedara Intel — Restricted", "enabled": true, "listed": false, "former_url": "https://vedara-intel.pplx.app", "perplexity_id": "51b3d7aa-71bc-46c2-b025-d2065fa7be81", "notes": "Passphrase-encrypted page; content stays encrypted in the repository."},
-    {"slug": "indooor-smart-garden", "title": "Indoor Smart Garden Showdown", "enabled": true, "listed": true, "former_url": "https://indooor-smart-garden.pplx.app", "perplexity_id": "3a73abb8-e76a-47bf-9d60-0a8e9818d0f6", "notes": ""},
-    {"slug": "ai-agent-swarm", "title": "AI Council Operations Dashboard", "enabled": true, "listed": true, "former_url": "https://ai-agent-swarm.pplx.app", "perplexity_id": "9fc2beca-0cd7-4cfb-8042-280e594fb5c2", "notes": ""},
-    {"slug": "hana-canvas-studio", "title": "Gemini Canvas · Hana Reynolds Social Media Doctor", "enabled": true, "listed": true, "former_url": "https://hana-canvas-studio.pplx.app", "perplexity_id": "cdcba9f6-0d55-4a75-8972-34f31e6a0113", "notes": "Built for a third party (Hana Reynolds)."}
+    {
+      "slug": "builder-commons",
+      "title": "Builder Commons — VibeRANT marketplace concept",
+      "enabled": true,
+      "listed": true,
+      "former_url": "https://builder-commons.pplx.app",
+      "perplexity_id": "731b7d33-6b08-4b90-a09d-89516160bc06",
+      "notes": "Live state API needed a server; runs on built-in sample data."
+    },
+    {
+      "slug": "precisely-studio-demo",
+      "title": "Precisely AI Studio — Live Field Test",
+      "enabled": true,
+      "listed": true,
+      "former_url": "https://precisely-studio-demo.pplx.app",
+      "perplexity_id": "579092c8-f893-483d-bc24-c575a58c7e86",
+      "notes": ""
+    },
+    {
+      "slug": "gm-cares-about-ridge-robotics",
+      "title": "GM Cares × Ridge Robotics — Celebration Day",
+      "enabled": true,
+      "listed": true,
+      "former_url": "https://gm-cares-about-ridge-robotics.pplx.app (also ridge-robotics-gm-cares.pplx.app)",
+      "perplexity_id": "be10ebf2-437f-4169-84a2-7ed932ed01fd",
+      "notes": "Contains student and school content; review consent before keeping on."
+    },
+    {
+      "slug": "jp-ineke-roadtrip",
+      "title": "João Paulo & Ineke — Sunnyvale to Seattle Road Trip",
+      "enabled": true,
+      "listed": true,
+      "former_url": "https://jp-ineke-roadtrip.pplx.app",
+      "perplexity_id": "6fb8a326-b177-4175-8c72-83e2c88bfe4a",
+      "notes": "Personal travel plan."
+    },
+    {
+      "slug": "rapp-vercel-private",
+      "title": "Vercel Diligence",
+      "enabled": true,
+      "listed": false,
+      "former_url": "https://rapp-vercel-private.pplx.app",
+      "perplexity_id": "1c06cd21-715a-4f73-827d-142d6fcdc556",
+      "notes": "Named 'private' but was public on pplx.app; hidden from the index page."
+    },
+    {
+      "slug": "datacenter-ai-tradeoffs",
+      "title": "Data Centers, AI & Social Trade-offs",
+      "enabled": true,
+      "listed": true,
+      "former_url": "https://datacenter-ai-tradeoffs.pplx.app",
+      "perplexity_id": "8cb8e0d9-7314-4d20-99c9-2fca8f786f7f",
+      "notes": ""
+    },
+    {
+      "slug": "vedara-intel",
+      "title": "Vedara Intel — Restricted",
+      "enabled": true,
+      "listed": false,
+      "former_url": "https://vedara-intel.pplx.app",
+      "perplexity_id": "51b3d7aa-71bc-46c2-b025-d2065fa7be81",
+      "notes": "Passphrase-encrypted page; content stays encrypted in the repository."
+    },
+    {
+      "slug": "indooor-smart-garden",
+      "title": "Indoor Smart Garden Showdown",
+      "enabled": false,
+      "listed": true,
+      "former_url": "https://indooor-smart-garden.pplx.app",
+      "perplexity_id": "3a73abb8-e76a-47bf-9d60-0a8e9818d0f6",
+      "notes": ""
+    },
+    {
+      "slug": "ai-agent-swarm",
+      "title": "AI Council Operations Dashboard",
+      "enabled": true,
+      "listed": true,
+      "former_url": "https://ai-agent-swarm.pplx.app",
+      "perplexity_id": "9fc2beca-0cd7-4cfb-8042-280e594fb5c2",
+      "notes": ""
+    },
+    {
+      "slug": "hana-canvas-studio",
+      "title": "Gemini Canvas · Hana Reynolds Social Media Doctor",
+      "enabled": true,
+      "listed": true,
+      "former_url": "https://hana-canvas-studio.pplx.app",
+      "perplexity_id": "cdcba9f6-0d55-4a75-8972-34f31e6a0113",
+      "notes": "Built for a third party (Hana Reynolds)."
+    }
   ]
 }
